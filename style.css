@@ -56,6 +56,10 @@ ul {
     margin-bottom: 3px;
 }
 
+.btn-box {
+    text-align: center;
+}
+
 .btn {
     border-radius: 5px;
     background-color: #27368C;
@@ -71,6 +75,15 @@ ul {
     width: 100%;
 }
 
+.hide {
+    display: none;
+}
+
+#start-btn {
+    margin: 2rem auto;
+    width: 10rem !important;
+}
+
 .logo {
     width: fit-content;
     margin: 1rem auto;
@@ -80,6 +93,7 @@ ul {
     font-family: 'Chivo', sans-serif;
     font-size: 1.375rem;
     font-weight: bold;
+    margin-top: 2rem;
 }
 
 .highlight-marker {
@@ -102,12 +116,43 @@ ul {
     border-radius: 13px;
     background: #EDF1FA;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.answer-list-item a {
+.answer-list-item.correct {
+    background: rgb(4, 168, 4)
+}
+
+.answer-list-item.correct button, .answer-list-item.wrong button {
+    color: #fff
+}
+
+.answer-list-item.correct .list-marker, .answer-list-item.wrong .list-marker {
+    color: #fff;
+    
+}
+
+.answer-list-item.correct .list-marker {
+    background: rgb(0, 216, 0)
+}
+
+.answer-list-item.wrong .list-marker {
+    background: rgb(238, 81, 60)
+}
+
+.answer-list-item.wrong {
+    background: rgb(196, 27, 5)
+}
+
+.answer-list-item button {
     text-decoration: none;
     color: rgba(30, 28, 97, 0.65);
-    display: block;
+    /* display: block; */
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    /* width: 100%; */
 }
 
 .list-marker {
@@ -203,3 +248,10 @@ ul {
 @media (min-width: 1200px){
 
 }
+
+
+
+
+
+
+/* test app */

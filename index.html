@@ -24,25 +24,27 @@
                 </div> <!-- header -->
 
                 <div class="row main-content">
-                    <div class="col-6 left center">
-                        <p class="highlight-marker">Question <span class="highlight">1/5</span></p>
+                    <div id="question-container" class="hide">
+                        <div class="col-6 left center">
+                            <p class="highlight-marker">Question <span class="highlight">1/5</span></p>
+                        </div>
+                        <div class="col-6 left center">
+                            <p class="highlight-marker">Score <span class="highlight">0</span></p>
+                        </div>
+    
+                        <div class="clear"></div>
+    
+                        <div class="col-12 quiz-box"> 
+                            <h3 class="center" id="question">Who is the Founder of Zoom?</h3>
+                            <ul class="row answer-list" id="answers">
+                                
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-6 left center">
-                        <p class="highlight-marker">Score <span class="highlight">0</span></p>
-                    </div>
-
-                    <div class="clear"></div>
-
-                    <div class="col-12 quiz-box">
-                        <h3 class="center">Who is the Founder of Zoom?</h3>
-                        <ul class="row answer-list">
-                            <li class="col-12 answer-list-item"><a href=""><span class="list-marker">A</span> Lei Yun</a></li>
-                            <li class="col-12 answer-list-item"><a href=""><span class="list-marker">B</span>Eric Yuan</a></li>
-                            <li class="col-12 answer-list-item"><a href=""><span class="list-marker">C</span>Jack Ma</a></li>
-                        </ul>
-                    </div>
+                    
                     <div class="col-12 btn-box">
-                        <a href="" class="btn right">Next</a>
+                        <button id="start-btn" class="btn">Start</button>
+                        <button id="next-btn" class="btn right hide">Next</button>
                     </div>
                 </div> <!-- main-content -->
             </main>
@@ -51,6 +53,6 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <script src=""></script>
+        <script src="script.js"></script>
     </body>
 </html>
