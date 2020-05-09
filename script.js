@@ -122,7 +122,7 @@ function selectAnswer(e) {
         // startButton.classList.add('right');
         // nextButton.classList.add('hide')
     }
-    nextButton.classList.remove('hide');
+    // nextButton.classList.remove('hide');
 }
 
 function setStatusClass(element, correct) {
