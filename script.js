@@ -4,10 +4,15 @@ const questionContainerElement = document.getElementById('question-container'); 
 let questionItem = document.getElementById('question');
 let answerItem = document.getElementById('answers');
 let shuffledQuestions, currentQuestionIndex;
+let quizCounter = document.getElementById('question-index')
+let score = document.getElementById('score');
+let questionPoint = 0;
+// console.log(quizCounter)
 
 startButton.addEventListener('click', startGame); //listen for a click event on my start button to initiate startGame function.
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
+    // console.log(currentQuestionIndex)
     setNextQuestion()
 })
 
@@ -71,6 +76,9 @@ function startGame() {
 function showQuestion(question) {
 
     questionItem.innerText = question.question;
+    // quizCounter = currentQuestionIndex + 1
+    // console.log(quizCounter)
+
 
     // show answers
     question.answers.forEach(answer => {
@@ -90,20 +98,6 @@ function showQuestion(question) {
         list.addEventListener('click', selectAnswer)
         answerItem.appendChild(list);
     });
-
-    // console.log(questionItem)
-
-    // for (const item of questions) {
-    //     for (const key in item) {
-    //         questionItem.innerText = item.question;
-    //         item.options.forEach(option => {
-    //             const listItem = document.createElement('li');
-    //             answerItem.appendChild(listItem)
-    //             console.log(answerItem);
-    //         });
-            
-    //     }
-    // }
 }
 
 function selectAnswer(e) {
@@ -119,10 +113,11 @@ function selectAnswer(e) {
     } else {
         startButton.innerText = 'Restart';
         startButton.classList.remove('hide');
-        // startButton.classList.add('right');
-        // nextButton.classList.add('hide')
     }
-    // nextButton.classList.remove('hide');
+    if (correct) {
+        questionPoint += 1;
+        score.innerText = questionPoint;
+    } 
 }
 
 function setStatusClass(element, correct) {
@@ -150,6 +145,11 @@ function resetState() {
     while (answerItem.firstChild) {
         answerItem.removeChild(answerItem.firstChild)
     }
+    // questionPoint = 0;
+}
+
+function showScores() {
+    
 }
 
 
