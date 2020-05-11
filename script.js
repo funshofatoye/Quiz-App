@@ -114,16 +114,19 @@ function selectAnswer(e) {
         startButton.innerText = 'Restart';
         startButton.classList.remove('hide');
     }
-    if (correct) {
+
+    if(correct) {
         questionPoint += 1;
+        // console.log(questionPoint);
         score.innerText = questionPoint;
-    } 
+        // console.log(score)
+    }
 }
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
-        element.classList.add('correct')
+        element.classList.add('correct');
     } else {
         element.classList.add('wrong')
     }
@@ -143,13 +146,14 @@ function resetState() {
     // clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerItem.firstChild) {
-        answerItem.removeChild(answerItem.firstChild)
+        console.log(answerItem.firstChild);
+        answerItem.removeChild(answerItem.firstChild) // remove answers from previous question
     }
     // questionPoint = 0;
 }
 
 function showScores() {
-    
+
 }
 
 
