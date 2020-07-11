@@ -7,6 +7,7 @@ let shuffledQuestions, currentQuestionIndex;
 let quizCounter = document.getElementById('question-index')
 let score = document.getElementById('score');
 let questionPoint = 0;
+let questionCount = 0; // Variable to current question number
 // console.log(quizCounter)
 
 startButton.addEventListener('click', startGame); //listen for a click event on my start button to initiate startGame function.
@@ -68,7 +69,9 @@ function startGame() {
     // console.log('Started')
     startButton.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5); // sort questions randomly
+    
     currentQuestionIndex = 0; // start randomizing from the first question 
+    questionCount = 0; // reset current question number to 1
     questionContainerElement.classList.remove('hide');
     setNextQuestion()
 }
@@ -138,6 +141,8 @@ function clearStatusClass(element) {
 }
 
 function setNextQuestion() { 
+    questionCount++;
+    quizCounter.innerText = questionCount;
     resetState()  
     showQuestion(shuffledQuestions[currentQuestionIndex]); // show a random question
 }
@@ -146,7 +151,7 @@ function resetState() {
     // clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerItem.firstChild) {
-        console.log(answerItem.firstChild);
+        // console.log(answerItem.firstChild);
         answerItem.removeChild(answerItem.firstChild) // remove answers from previous question
     }
     // questionPoint = 0;
